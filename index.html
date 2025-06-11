@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Processor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">        
+        <div class="main-layout">
+            <!-- Left Column: File Upload and Preview -->
+            <div class="column left-column">
+                <!-- Hidden inputs with default values -->
+                <input type="hidden" id="apiKey" value="740aec56-97dd-4fdf-9427-85dd2cd4b909">
+                <input type="hidden" id="timeout" value="300">
+                <input type="hidden" id="include-metadata" value="false">
+                
+                <div class="upload-section">
+                    <h2>Upload File</h2>
+                    <div id="drop-area" class="drop-area">
+                        <p>Drag & drop file here or</p>
+                        <label for="fileInput" class="browse-btn">Browse Files</label>
+                        <input type="file" id="fileInput" hidden>
+                        <p id="file-name" class="file-name">No file selected</p>
+                    </div>
+                    
+                    <button id="processBtn" class="process-btn" disabled>Process Document</button>
+                </div>
+                
+                <div class="preview-section">
+                    <h2>File Preview</h2>
+                    <div id="filePreview" class="file-preview">
+                        <p class="no-preview">No file to preview</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Results -->
+            <div class="column right-column">
+                <div class="result-section">
+                    <h2>Processing Results</h2>
+                    <div class="loader" id="loader" hidden></div>
+                    <div id="resultContainer" class="result-container">
+                        <p class="no-result">No results to display yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
